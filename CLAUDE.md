@@ -29,6 +29,7 @@ images/hero.jpg   Owner photo, not supplied yet
 - **Shared chrome:** both pages repeat the same header, footer and inline SVG icon sprite (`<symbol id="i-…">`, used through `<use href="#i-…">`). There are no includes, so edit both pages the same way. `prices.html` adds a "Home" link, marks "Prices" with `aria-current="page"` and points Reviews/Hours to `index.html#…`.
 - **Tokens:** use `var(--…)` everywhere and never hard-code colors outside `:root`. `--white` was added beyond the spec's token table.
 - **Icons:** inline SVG with a 2px stroke and round caps. Stroke styling comes from the `.icon` class, not from the symbols. No icon libraries and no emoji. Decorative SVGs get `aria-hidden="true"`.
-- **Hero photo:** the `.hero-photo` frame has a `--blush-2` background, and the `<img>` removes itself `onerror`, so the page looks fine before `images/hero.jpg` exists. Keep the photo under 300 KB.
+- **Hero photo:** `images/hero.jpg` is currently a stand-in Unsplash stock photo (credit in an HTML comment beside the `<img>`), cropped to 5:4 at 1200×960. Replace it with the owner's photo when it arrives, keep it under 300 KB and update the `alt` text. The frame's `--blush-2` background and the `onerror` removal keep the page looking fine if the file is missing.
+- **Hosting:** the site is published on GitHub Pages from `main` at https://kalind789.github.io/chanda_kabita/. Pushing to `main` redeploys it.
 - **Reviews:** to add one, copy the card template in the HTML comment at the end of `.review-track` in `index.html`.
 - **Rating figures:** 4.6 from 171 reviews, 144 of them five-star. These come from October 2026 listings and appear in several places in `index.html`; confirm they're current before launch.
